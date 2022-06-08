@@ -1,5 +1,5 @@
 from secrets import choice
-from tkinter import Widget
+#from tkinter import Widget
 from django import forms
 from django.forms import ModelForm
 from pkg_resources import require
