@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-#import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,23 +87,23 @@ WSGI_APPLICATION = 'mooweb.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'defclt4htmlmhl',
-#        'USER':'mwdmwltfmthuys',
-#        'PASSWORD':'184fefcdf2f8c21f14da2ca94c40f1751f2ee093d0329cd593e23facfd28a60d',
-#        'HOST':'ec2-54-157-16-196.compute-1.amazonaws.com',
-#        'PORT':'5432',
-#    }
-#}
-import dj_database_url
-from decouple import config
-DATABASES ={
-    'default': dj_database_url.config(
-        default= config('DATABASE_URL')
-    )
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'defclt4htmlmhl',
+        'USER':'mwdmwltfmthuys',
+        'PASSWORD':'184fefcdf2f8c21f14da2ca94c40f1751f2ee093d0329cd593e23facfd28a60d',
+        'HOST':'ec2-54-157-16-196.compute-1.amazonaws.com',
+        'PORT':'5432',
+    }
 }
+#import dj_database_url
+#from decouple import config
+#DATABASES ={
+#    'default': dj_database_url.config(
+#        default= config('DATABASE_URL')
+#    )
+#}
 
 
 # Password validation
@@ -141,12 +141,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
-STATIC_TMP = os.path.join(BASE_DIR, 'static')
+#STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 
-os.makedirs(STATIC_TMP, exist_ok=True)
+#os.makedirs(STATIC_TMP, exist_ok=True)
 os.makedirs(STATIC_ROOT, exist_ok=True)
 
 STATICFILES_DIRS =(
