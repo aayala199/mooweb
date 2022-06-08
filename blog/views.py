@@ -1,4 +1,4 @@
-from turtle import pos
+#from turtle import pos
 from django.shortcuts import render
 from blog.models import Post
 

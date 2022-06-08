@@ -1,8 +1,8 @@
-from secrets import choice
+#from secrets import choice
 #from tkinter import Widget
 from django import forms
 from django.forms import ModelForm
-from pkg_resources import require
+#from pkg_resources import require
 from .models import unirmeRegistro
 
 #create a unirme form
