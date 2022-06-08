@@ -1,0 +1,251 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} registra tu auto {% endblock%}
+{% load static %}
+
+<style>
+    spacerinicial{
+        margin-top: 50px;
+    }
+</style>
+
+{% block content %}
+<div class="container">
+    
+    <p>ssad</p>
+    
+</div>
+    <!-- Registra tu auto section -->
+<section class="about-us section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12" id="col-12 about-us">
+                    <div class="about-left">
+                            <div class="section-title align-left">
+                                <span class="wow fadeInDown" data-wow-delay=".2s">What we do</span>
+                                <h2 class="wow fadeInUp" data-wow-delay=".4s">Gana dinero compartiendo tu auto por hora o dias</h2>
+                                <p class="wow fadeInUp" data-wow-delay=".6s">Alquila cuando quieras al precio que quieras.</p>
+                            </div>
+                            <div class="about-tab wow fadeInUp" data-wow-delay=".4s">
+                                <!-- Nav Tab  -->
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#t-tab1"
+                                            role="tab">Requisitos</a></li>
+                                    <!-- <li class="nav-item"><a class="nav-link " data-toggle="tab" href="#t-tab2"
+                                            role="tab">Strategy</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#t-tab3"
+                                            role="tab">Development</a></li> -->
+                                </ul>
+                                <!--/ End Nav Tab -->
+                                <div class="tab-content" id="myTabContent">
+                                    <!-- Tab 1 -->
+                                    <div class="tab-pane fade show active" id="t-tab1" role="tabpanel">
+                                        <div class="tab-content">
+                                            <p>Condiciones para alquilar tu auto en Moobec:</p>
+                                            <ul>
+                                                <li><i class="lni lni-checkmark-circle"></i> autos con menos de 7 anios de antiguedad y menos de 150.000km</li>
+                                                <li><i class="lni lni-checkmark-circle"></i> Con apertura y cierre centralizado</li>
+                                                <li><i class="lni lni-checkmark-circle"></i> Con aplicacion de rastreo</li>
+                                                <li><i class="lni lni-checkmark-circle"></i> Tener toda la documentacion al dia para poder circular</li>
+                                                <li><i class="lni lni-checkmark-circle"></i> Solo Guayaquil ( pronto serviremos Quito y Cuenca )</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--/ End Tab 1 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="about-right wow fadeInRight" data-wow-delay=".4s">
+                            <!--<img src="assets/images/about-img.png" alt="#"> -->
+                             <!-- <form class="row g-3">
+                                <div class="col-md-6">
+                                  <label for="inputEmail4" class="form-label">Email</label>
+                                  <input type="email" class="form-control" id="inputEmail4"({{formulario.email}})>
+                                  <span> {{formulario.email}}</span>
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Password</label>
+                                  <input type="password" class="form-control" id="inputPassword4">
+                                </div>
+                                <div class="col-12">
+                                  <label for="inputAddress" class="form-label">Address</label>
+                                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                </div>
+                                <div class="col-12">
+                                  <label for="inputAddress2" class="form-label">Address 2</label>
+                                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="inputCity" class="form-label">City</label>
+                                  <input type="text" class="form-control" id="inputCity">
+                                </div>
+                                <div class="col-md-4">
+                                  <label for="inputState" class="form-label">State</label>
+                                  <select id="inputState" class="form-select">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-2">
+                                  <label for="inputZip" class="form-label">Zip</label>
+                                  <input type="text" class="form-control" id="inputZip">
+                                </div>
+                                <div class="col-12">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                      Check me out
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-12">
+                                  <button type="submit" class="btn btn-primary">Sign in</button>
+                                </div>
+                              </form -->
+                              <!--div class="container">
+                                <form class="form-inline" action="" method="POST" style="text-align: center;">{% csrf_token %}                             
+                                  <table>{{ formulario.as_table }}</table>
+                                  <button class="btn btn-primary">Enviar</button>
+                                </form>
+                              </div-->
+
+                              <div class="container">
+                                <h3 style="margin-bottom: 20px;">Solicitud de registro</h3>
+                                {% if submitted %}
+                                  Registro enviado correctamente!!!
+
+                                {% else %}
+                                  <form action="" class="form-inline"  method="POST"> {% csrf_token %}                             
+                                    {{ unirme.as_p}}
+                                      <!--input type="text" class="form-control" id="validationCustom01" name="marca" placeholder="marca" >
+                                      <input type="text" class="form-control" name="modelo" placeholder="modelo"  >
+                                      <input type="number" class="form-control" name="year" placeholder="year">
+                                      <select type="number" class="form-control" name="year" placeholder="year">
+                                        <option value="2016"> 2016</option>
+                                        <option value="2017"> 2017</option>
+                                        <option value="2018"> 2018</option>
+                                        <option value="2019"> 2019</option>
+                                        <option value="2020"> 2020</option>
+                                        <option value="2021"> 2021</option>
+                                        <option value="2022"> 2022</option>
+                                        <option value="2023"> 2023</option>
+                                      </select>
+                                      <select type="text" class="form-control" name="millas" placeholder="km">
+                                        <option value="0-15000"> 0-15000 km</option>
+                                        <option value="15-50000"> 15-50000 km</option>
+                                        <option value="50-100000"> 50-100000 km</option>
+                                        <option value="100-150000"> 100-150000 km</option>
+                                        <option value="+150000"> +15000 km</option>
+                                      </select>
+                                      <input type="text" class="form-control" name="millas" placeholder="millas">
+                                      <input type="text" class="form-control" name="locacion" placeholder="ciudad">
+                                      <select type="text" class="form-control" name="locacion" placeholder="ciudad">
+                                        <option value="guayaquil"> Guayaquil</option>
+                                        <option value="quito"> Quito</option>
+                                        <option value="cuenca"> Cuenca</option>
+                                      </select>
+                                      <input type="text"  class="form-control" name="nombre" placeholder="nombre" >
+                                      <input type="email" class="form-control" name="email" placeholder="e.g. bobsmith@gmail.com" >
+                                      <input type="text" class="form-control" name="telefono" placeholder="fono" maxlength="10"-->
+                                    <button class="btn btn-primary" type="submit"> Enviar</button>
+                                  </form>
+                                {% endif %}
+                              </div>
+                        </div>                
+                    </div>
+                  </div>
+                </div>
+        </div>
+</section>
+
+<section class="services section">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="section-title align-left">
+                  <span class="wow fadeInDown" data-wow-delay=".2s">Gana dinero extra</span>
+                  <h2 class="wow fadeInUp" data-wow-delay=".4s">Provide Awesome Service With Our Tools</h2>
+                  <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                      Ipsum available, but the majority have suffered alteration in some form.</p>
+              </div>
+          </div>
+      </div>
+      <div class="single-head">
+          <img class="service-patern wow fadeInLeft" data-wow-delay=".5s"
+              src="static/assets/images/service/service-patern.png" alt="#">
+          <div class="row">
+              <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay=".2s">
+                      <h3><a href="service-single.html">Registra tu auto</a></h3>
+                      <div class="icon">
+                          <i class="lni lni-car"></i>
+                      </div>
+                      <p>Añade la información esencial sobre tu auto, y te llamaremos para agendar una cita para revisar la documentacion y el estado del auto</p>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay=".4s">
+                      <h3><a href="service-single.html">Recibe alquileres</a></h3>
+                      <div class="icon">
+                          <i class="lni lni-facebook-messenger"></i>
+                      </div>
+                      <p>Después de pasar un proceso de verificación, los conductores podrán reservar tu coche cuando esté disponible.</p>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay=".6s">
+                      <h3><a href="service-single.html">Alquila sin esfuerzo</a></h3>
+                      <div class="icon">
+                          <i class="lni lni-pin"></i>
+                      </div>
+                      <p>Los conductores pueden localizar tu auto, despues tendras que acpetar la oferta, y nosotros nos encargamos del resto </p>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay=".8s">
+                      <h3><a href="service-single.html">Recibe tus pagos</a></h3>
+                      <div class="icon">
+                          <i class="lni lni-revenue"></i>
+                      </div>
+                      <p>Recibes una transferencia bancaria en 7 días laborables después de cada alquiler - incluyendo compensaciones por carburante o kilometraje si las hay.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+        
+<section class="about-us section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <div class="about-left">
+          <div class="section-title align-left">
+            <span class="wow fadeInDown" data-wow-delay=".2s"></span>
+            <h2 class="wow fadeInUp" data-wow-delay=".4s">Tu auto siempre esta seguro</h2>
+            <p class="wow fadeInUp" data-wow-delay=".6s">Verificamos los documentos de todos los conductores y utilizamos una tecnología de identificación facial 100% fiable para asegurar que te llegan conductores de confianza.</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-lg-6 col-12">
+        <div class="about-right wow fadeInRight">
+            <h1>hola rigtht</h1>
+            <a href='https://www.freepik.es/vectores/tecnologico'>Vector de tecnologico creado por freepik - www.freepik.es</a>
+        </div>
+
+      </div>
+      
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{% endblock %}
+
